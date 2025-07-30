@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="tr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürün - Netzilo - Güvenli Dijital İş Yeri</title>
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/netzilo_logo_blue.svg">
+    <link rel="icon" type="image/png" href="../../assets/images/netzilo_logo_blue.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab-button {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .tab-button.active {
+            background-color: #1e40af;
+            color: white;
+        }
+        .tab-button.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: #3b82f6;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Gartner Review Carousel Styles */
+        .review-slide {
+            display: none;
+        }
+        .review-slide.active {
+            display: block;
+        }
+        .review-dot {
+            transition: all 0.3s ease;
+        }
+        .review-dot.active {
+            background-color: #3b82f6;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white">
+    <!-- Navigation -->
+    <nav class="bg-slate-950 border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="hidden md:grid grid-cols-3 items-center h-16">
+                <div class="flex items-center">
+                    <a href="../../" class="flex items-center">
+                        <img src="../../assets/images/netzilo_logo_full_white.svg" alt="Netzilo" class="h-8">
+                    </a>
+                </div>
+
+                <div class="flex items-center justify-center space-x-8 relative z-20">
+                    <a href="../../" class="nav-link px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:border-b-2 hover:border-blue-400 transition-colors cursor-pointer">Ana Sayfa</a>
+                    <a href="../../product/" class="nav-link px-4 py-3 text-sm font-medium text-blue-400 border-b-2 border-blue-400 transition-colors cursor-pointer">Ürün</a>
+                    <a href="../../tr/solutions/" class="nav-link px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:border-b-2 hover:border-blue-400 transition-colors cursor-pointer">Çözümler</a>
+                    <a href="../../tr/pricing/" class="nav-link px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:border-b-2 hover:border-blue-400 transition-colors cursor-pointer">Fiyatlandırma</a>
+                    <a href="../../tr/about/" class="nav-link px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:border-b-2 hover:border-blue-400 transition-colors cursor-pointer">Hakkımızda</a>
+                </div>
+
+                <div class="flex items-center justify-end">
+                    <a href="https://go.netzilo.com/register" target="_blank" rel="noopener" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-md text-sm font-medium transition-colors inline-flex items-center justify-center">
+                        Başlayın
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile layout -->
+            <div class="md:hidden flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="../../" class="flex items-center">
+                        <img src="../../assets/images/netzilo_logo_full_white.svg" alt="Netzilo" class="h-8">
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-slate-900 rounded-lg mt-2">
+                    <a href="../../" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800 transition-colors">Ana Sayfa</a>
+                    <a href="../../product/" class="block px-3 py-2 text-base font-medium text-blue-400 bg-slate-800 transition-colors">Ürün</a>
+                    <a href="../../tr/solutions/" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800 transition-colors">Çözümler</a>
+                    <a href="../../tr/pricing/" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800 transition-colors">Fiyatlandırma</a>
+                    <a href="../../tr/about/" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-slate-800 transition-colors">Hakkımızda</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="relative bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 py-20 lg:py-32 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20"></div>
+            <img src="../../assets/images/netzilo_hero_enhanced.png" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-70 blur-lg pointer-events-none select-none z-0" style="min-width:100vw;min-height:100%;"/>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight">
+                        Güvenli Dijital<br>
+                        <span class="gradient-text">İş Yeri</span>
+                    </h1>
+                    
+                    <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+                        Netzilo, kurumsal kenar yeteneklerini uç nokta ortamlarına genişleten kapsamlı bir Dijital Kurumsal İş Yeri çözümüdür.
+                    </p>
+                    
+                    <div class="text-lg text-blue-300 mb-8 font-medium">
+                        Gerçek izolasyon ile güvenlik ve üretkenliği birleştirir
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                        <a href="https://docsend.com/view/2s6pfr9yn26i8kce" target="_blank" rel="noopener" class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-md transition-colors inline-flex items-center justify-center">
+                            Beyaz Kitap İndir
+                            <svg class="ml-2 h-5 w-5 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                        <a href="../contact/" class="border border-blue-500 text-blue-400 hover:bg-blue-500/10 px-8 py-4 text-lg rounded-md transition-colors inline-flex items-center justify-center">
+                            Satış İle İletişim
+                        </a>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                        <div class="text-center">
+                            <div class="text-3xl md:text-4xl font-bold text-blue-400 mb-2">%80</div>
+                            <div class="text-gray-400 text-sm md:text-base">Maliyet Azaltma</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl md:text-4xl font-bold text-blue-400 mb-2">11x</div>
+                            <div class="text-gray-400 text-sm md:text-base">Daha Hızlı Değer</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl md:text-4xl font-bold text-blue-400 mb-2">3x</div>
+                            <div class="text-gray-400 text-sm md:text-base">Daha Üretken</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl md:text-4xl font-bold text-blue-400 mb-2">%70</div>
+                            <div class="text-gray-400 text-sm md:text-base">Yönetim Zamanı</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Overview Section -->
+        <section class="py-20 bg-slate-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Ürün Genel Bakış
+                    </h2>
+                    <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                        Netzilo, geleneksel VDI ve RBI çözümlerine modernize edilmiş alternatif sunan eksiksiz bir Dijital Kurumsal İş Yeri platformudur.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-6">
+                            Kurumsal Tarayıcı
+                        </h3>
+                        <p class="text-gray-300 text-lg mb-6">
+                            Netzilo'nun Kurumsal Tarayıcısı, güvenlik ve üretkenliği mükemmel şekilde dengeler. Geleneksel tarayıcı izolasyon çözümlerinin aksine, yerel performans sağlarken tam güvenlik koruması sunar.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-blue-400 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-300">Sıfır gecikme ile yerel yürütme</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-blue-400 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-300">Gerçek zamanlı tehdit koruması</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-blue-400 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-300">Kapsamlı veri yönetimi kontrolleri</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-blue-400 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-300">Herhangi bir cihazda çalışır</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-800 rounded-lg p-8">
+                        <img src="../../assets/images/security_dashboard.png" alt="Güvenlik Paneli" class="w-full h-auto rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Cards Section -->
+        <section class="py-20 bg-slate-950">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Ürün Bileşenleri
+                    </h2>
+                    <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                        Netzilo'nun kapsamlı güvenlik platformu, kurumsal ihtiyaçlarınızı karşılamak için tasarlanmış modüler bileşenlerden oluşur.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-slate-800 border border-slate-700 p-6 rounded-lg cursor-pointer hover:bg-slate-700 hover:border-blue-500 transition-all card-hover" onclick="showTab('browser')">
+                        <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-xl font-bold mb-2">Kurumsal Tarayıcı</h2>
+                        <p class="text-gray-400 text-sm mb-4">Yerleşik ZTNA ve DLP ile sıfır güven tarayıcı çözümü.</p>
+                        <ul class="text-sm text-gray-300 space-y-1">
+                            <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Yerleşik ZTNA</li>
+                            <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Gelişmiş DLP Kontrolleri</li>
+                            <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Evrensel Platform Desteği</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-slate-800 border border-slate-700 p-6 rounded-lg cursor-pointer hover:bg-slate-700 hover:border-blue-500 transition-all card-hover" onclick="showTab('workspace')">
+                        <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-xl font-bold mb-2">Kurumsal Çalışma Alanı</h2>
+                        <p class="text-gray-400 text-sm mb-4">Kullanıcının cihazında izole edilmiş güvenli çalışma alanı.</p>
+                        <ul class="text-sm text-gray-300 space-y-1">
+                            <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Veri Kullanımında Koruması</li>
+                            <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Granüler Güvenlik Kontrolleri</li>
+                            <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Yönetilmeyen Cihaz Kontrolü</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-slate-800 border border-slate-700 p-6 rounded-lg cursor-pointer hover:bg-slate-700 hover:border-blue-500 transition-all card-hover" onclick="showTab('extension')">
+                        <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-xl font-bold mb-2">Tarayıcı Uzantısı</h2>
+                        <p class="text-gray-400 text-sm mb-4">Mevcut tarayıcıları gelişmiş güvenlik kontrolleriyle güvenli kurumsal tarayıcılara dönüştürün.</p>
+                        <ul class="text-sm text-gray-300 space-y-1">
+                            <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Granüler DLP Kontrolleri</li>
+                            <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> SaaS ve AI Yönetimi</li>
+                            <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Çoklu Tarayıcı Uyumluluğu</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-slate-800 border border-slate-700 p-6 rounded-lg cursor-pointer hover:bg-slate-700 hover:border-blue-500 transition-all card-hover" onclick="showTab('disposable-browser')">
+                        <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-xl font-bold mb-2">Geçici Tarayıcı</h2>
+                        <p class="text-gray-400 text-sm mb-4">Sıfır gün koruması için uç noktada izole edilmiş güvenli tarayıcı ortamı.</p>
+                        <ul class="text-sm text-gray-300 space-y-1">
+                            <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Tek Oturum Tarayıcı</li>
+                            <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Güçlü Web Tehdit Kapsaması</li>
+                            <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Yerel RBI Benzeri Koruması</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-slate-800 border border-slate-700 p-6 rounded-lg cursor-pointer hover:bg-slate-700 hover:border-blue-500 transition-all card-hover" onclick="showTab('network')">
+                        <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-xl font-bold mb-2">Sıfır Güven Ağı</h2>
+                        <p class="text-gray-400 text-sm mb-4">Geleneksel VPN altyapısını geçici bağlantılarla değiştiren sıfır güven üst ağı.</p>
+                        <ul class="text-sm text-gray-300 space-y-1">
+                            <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> VPN Yerine Geçen</li>
+                            <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Kaynak Tabanlı Erişim Kontrolü</li>
+                            <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Cihaz ve Güvenlik Durumu Doğrulaması</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-slate-800 border border-slate-700 p-6 rounded-lg cursor-pointer hover:bg-slate-700 hover:border-blue-500 transition-all card-hover" onclick="showTab('resources')">
+                        <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-xl font-bold mb-2">Kaynaklar</h2>
+                        <p class="text-gray-400 text-sm mb-4">Daha fazla bilgiye mi ihtiyacınız var?</p>
+                        <ul class="text-sm text-gray-300 space-y-1">
+                            <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Teknik Dokümantasyon</li>
+                            <li class="flex items-center"><span class="text-blue-400 mr-2">•</span> Video Eğitimler</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Enterprise Product Details Section -->
+                <div class="mt-20">
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg p-8">
+                        <h2 class="text-3xl font-bold mb-8 text-center text-white">Kurumsal Ürün Detayları</h2>
+                    
+                        <!-- Tab Navigation -->
+                        <div class="flex flex-wrap justify-center gap-2 mb-8 border-b border-slate-700">
+                            <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700 active" onclick="showTab('browser')">Kurumsal Tarayıcı</button>
+                            <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('workspace')">Kurumsal Çalışma Alanı</button>
+                            <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('extension')">Tarayıcı Uzantısı</button>
+                            <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('disposable-browser')">Geçici Tarayıcı</button>
+                            <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('network')">Sıfır Güven Ağı</button>
+                            <button class="tab-button px-4 py-2 text-sm font-medium rounded-t-lg hover:bg-slate-700" onclick="showTab('resources')">Ek Kaynaklar</button>
+                        </div>
+
+                        <!-- Tab Contents -->
+                        <!-- Enterprise Browser Content -->
+                        <div id="browser-content" class="tab-content active">
+                            <div class="bg-slate-700/50 rounded-lg p-8">
+                                <div class="flex items-center mb-6">
+                                    <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-3xl font-bold">Kurumsal Tarayıcı</h3>
+                                </div>
+                                
+                                <h4 class="text-2xl font-semibold text-blue-400 mb-4">Yerleşik DLP ile Sıfır Güven Tarayıcı</h4>
+                                <p class="text-gray-300 mb-8">Kurumsal Tarayıcı, ek ajanlar veya kurulum gerektirmeyen yerleşik ZTNA ile kapsamlı bir sıfır güven tarama çözümü sunar. Bu birleşik platform, mobilden masaüstüne kadar tüm cihazlarda son mil veri koruması sağlarken, hassas veri azaltma politikalarını doğrudan tarayıcı içinde uygular, kurumsal verilerin güvenli ortamdan hiç çıkmamasını sağlar.</p>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div class="bg-slate-800 rounded-lg p-6">
+                                        <div class="flex items-center mb-4">
+                                            <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                                                </svg>
+                                            </div>
+                                            <h5 class="text-xl font-semibold">Yerleşik Sıfır Güven Ağ Erişimi</h5>
+                                        </div>
+                                        <p class="text-gray-400">Yerleşik ZTNA yetenekleri ayrı VPN istemcileri veya ağ ajanlarına olan ihtiyacı ortadan kaldırır. Her bağlantı doğrulanır ve şifrelenir, kimlik tabanlı erişim kontrolleri tarayıcı seviyesinde uygulanır. Kullanıcılar daha geniş ağı açığa çıkarmadan doğrudan yetkili kaynaklara bağlanır, herhangi bir cihaz veya konumdan sıfır güven ilkelerini korur.</p>
+                                    </div>
+                                    
+                                    <div class="bg-slate-800 rounded-lg p-6">
+                                        <div class="flex items-center mb-4">
+                                            <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                                </svg>
+                                            </div>
+                                            <h5 class="text-xl font-semibold">Gelişmiş DLP ve Veri Kontrolleri</h5>
+                                        </div>
+                                        <p class="text-gray-400">Kapsamlı veri kaybı önleme, tarayıcı içinde gerçek zamanlı olarak çalışır, yetkisiz yüklemeleri, indirmeleri ve pano işlemlerini engeller. Hassas veri azaltma, görüntülemeden önce gizli bilgileri otomatik olarak redakte eder veya maskeleyerek, son mil kontrolleri tüm platformlarda ekran yakalama, yazdırma ve veri sızıntısı girişimlerini önler.</p>
+                                    </div>
+                                    
+                                    <div class="bg-slate-800 rounded-lg p-6">
+                                        <div class="flex items-center mb-4">
+                                            <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                                </svg>
+                                            </div>
+                                            <h5 class="text-xl font-semibold">Evrensel Platform Kapsaması</h5>
+                                        </div>
+                                        <p class="text-gray-400">Platform özel derlemeler olmadan iOS, Android, Windows, macOS ve Linux genelinde tek bir çözüm dağıtın. Kurumsal Tarayıcı, kurumsal dizüstü bilgisayarlardan, kişisel akıllı telefonlardan veya paylaşılan iş istasyonlarından erişilip erişilmediğine bakılmaksızın tutarlı güvenlik politikaları ve kullanıcı deneyimi korur, BT yönetimini ve kullanıcı benimsemesini basitleştirir.</p>
+                                    </div>
+                                    
+                                    <div class="bg-slate-800 rounded-lg p-6">
+                                        <div class="flex items-center mb-4">
+                                            <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                                </svg>
+                                            </div>
+                                            <h5 class="text-xl font-semibold">Ajansız Mimari</h5>
+                                        </div>
+                                        <p class="text-gray-400">Kurulum yok, cihaz kaydı yok, kalıcı iz yok. Kurumsal Tarayıcı tamamen kendi kendine yeterli çalışır, ana cihazda hiç iz bırakmaz. BT ekipleri, uç noktalara dokunmadan binlerce kullanıcıya anında güvenli erişim dağıtabilirken, tüm veri etkileşimleri ve kullanıcı aktiviteleri üzerinde granüler görünürlük ve kontrol korur.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Enterprise Workspace Content -->
+                        <div id="workspace-content" class="tab-content">
+                            <div class="bg-slate-700/50 rounded-lg p-8">
+                                <div class="flex items-center mb-6">
+                                    <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-3xl font-bold">Kurumsal Çalışma Alanı</h3>
+                                </div>
+                                
+                                <h4 class="text-2xl font-semibold text-blue-400 mb-4">İzole Edilmiş Uç Nokta Alanı</h4>
+                                <p class="text-gray-300 mb-8">Kurumsal Çalışma Alanı, kullanıcının cihazında kurumsal uygulamaları (e-posta, CRM, işbirliği) kişisel ortamdan ayrı olarak çevreleyen güvenli, izole edilmiş bir alan oluşturur. Bu geçici, kendini savunan çalışma alanı yerel olarak çalışır ancak ana işletim sisteminden izole kalır, hassas aktivite için güvenli bir sığınak oluşturur.</p>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div class="bg-slate-800 rounded-lg p-6">
+                                        <div class="flex items-center mb-4">
+                                            <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                                                </svg>
+                                            </div>
+                                            <h5 class="text-xl font-semibold">Veri Kullanımında Koruması</h5>
+                                        </div>
+                                        <p class="text-gray-400">Kurumsal uygulamalar alan içinde yürütülür, burada veriler ana makine tarafından erişilemez. Kötü amaçlı yazılım kişisel tarafı enfekte etse bile, çalışma alanına ulaşamaz. Hassas dosyalar asla güvensiz ana disk'e dokunmaz.</p>
+                                    </div>
+                                    
+                                    <div class="bg-slate-800 rounded-lg p-6">
+                                        <div class="flex items-center mb-4">
+                                            <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                </svg>
+                                            </div>
+                                            <h5 class="text-xl font-semibold">Granüler Güvenlik Kontrolleri</h5>
+                                        </div>
+                                        <p class="text-gray-400">Kopyala-yapıştır, yazdırma ve ekran yakalama için ince taneli politika kontrolleri seçici olarak engellenebilir. İsteğe bağlı filigranlar, fotoğrafçılığı caydırmak ve sızıntıları izlemek için çalışma alanı uygulamalarının üzerine bindirilebilir.</p>
+                                    </div>
+                                    
+                                    <div class="bg-slate-800 rounded-lg p-6">
+                                        <div class="flex items-center mb-4">
+                                            <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                                </svg>
+                                            </div>
+                                            <h5 class="text-xl font-semibold">Yönetilmeyen Cihaz Kontrolü</h5>
+                                        </div>
+                                        <p class="text-gray-400">MDM/UDM çözümleri dağıtmadan BYOD ve yönetilmeyen cihazlardan güvenli erişimi etkinleştirin. Netzilo'nun çalışma alanı, kurumsal verileri izole edilmiş alan içinde içererek kurumsal sınıf kontrol sağlar. BT tam görünürlük ve politika uygulamasını korurken kullanıcılar cihaz özerkliklerini korur.</p>
+                                    </div>
+                                    
+                                    <div class="bg-slate-800 rounded-lg p-6">
+                                        <div class="flex items-center mb-4">
+                                            <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                                </svg>
+                                            </div>
+                                            <h5 class="text-xl font-semibold">Sıfır Güven Mimarisi</h5>
+                                        </div>
+                                        <p class="text-gray-400">Tasarım uç noktada sıfır güven varsayar: giriş akışlarını izole ederek keylogger'lar bile etkisiz hale getirilir. Çalışma alanı kapatıldığında kendini yok eder – şifrelenmiş belgeleri veya önbelleğe alınmış verileri silerek hiçbir şey cihazda kalıcı olmaz.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Other tab contents will be added here -->
+                        <div id="extension-content" class="tab-content">
+                            <div class="bg-slate-700/50 rounded-lg p-8">
+                                <div class="flex items-center mb-6">
+                                    <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-3xl font-bold">Kurumsal Tarayıcı Uzantısı</h3>
+                                </div>
+                                
+                                <h4 class="text-2xl font-semibold text-blue-400 mb-4">Herhangi Bir Tarayıcıyı Güvenli Kurumsal Tarayıcıya Dönüştürün</h4>
+                                <p class="text-gray-300 mb-8">Kurumsal Tarayıcı Uzantısı, kullanıcıların mevcut tarayıcılarını (Chrome, Edge, Firefox, vb.) isteğe bağlı olarak güvenli kurumsal tarayıcılara dönüştürür. Bağımsız Kurumsal Tarayıcıdan farklı olarak, bu yaklaşım istemci cihazlarında zaten yüklü olan tarayıcıları kullanır, bunları kurumsal sınıf güvenlik kontrolleriyle geliştirir.</p>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div class="bg-slate-800 rounded-lg p-6">
+                                        <div class="flex items-center mb-4">
+                                            <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                                </svg>
+                                            </div>
+                                            <h5 class="text-xl font-semibold">Granüler DLP Kontrolleri</h5>
+                                        </div>
+                                        <p class="text-gray-400">Belirli alan adlarından dosya indirmelerini kısıtlayın, hassas verileri anında maskeleyin veya redakte edin ve dahili web uygulamalarından kopyala/yapıştır veya yazdırma işlemlerini seçici olarak devre dışı bırakın. Her korumalı sayfa, sızıntıları caydırmak için özel bir filigranla işaretlenebilir.</p>
+                                    </div>
+                                    
+                                    <div class="bg-slate-800 rounded-lg p-6">
+                                        <div class="flex items-center mb-4">
+                                            <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                                </svg>
+                                            </div>
+                                            <h5 class="text-xl font-semibold">SaaS ve AI Yönetimi</h5>
+                                        </div>
+                                        <p class="text-gray-400">Kurumsal Tarayıcı uzantısı, SaaS ve web tabanlı AI ile etkileşimleri gerçek zamanlı olarak izler. Gelişmiş güvenlik önlemleri, üretken AI platformlarında prompt-injection saldırılarını önler – AI çıktılarında veya formlarda gizlenmiş kötü amaçlı talimatlara karşı koruma sağlar.</p>
+                                    </div>
+                                    
+                                    <div class="bg-slate-800 rounded-lg p-6">
+                                        <div class="flex items-center mb-4">
+                                            <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                                </svg>
+                                            </div>
+                                            <h5 class="text-xl font-semibold">Çoklu Tarayıcı Uyumluluğu</h5>
+                                        </div>
+                                        <p class="text-gray-400">Chrome, Edge, Firefox ve diğerleri dahil tüm büyük tarayıcılarla çalışır, organizasyonların kullanıcı tercihlerini desteklerken güvenliği korumasına olanak tanır. Bu, kullanıcıları yeni bir tarayıcı benimsemeye zorlama ihtiyacını ortadan kaldırır.</p>
+                                    </div>
+                                    
+                                    <div class="bg-slate-800 rounded-lg p-6">
+                                        <div class="flex items-center mb-4">
+                                            <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
+                                                </svg>
+                                            </div>
+                                            <h5 class="text-xl font-semibold">Şeffaf Kullanıcı Deneyimi</h5>
+                                        </div>
+                                        <p class="text-gray-400">Kullanıcıların zaten bildiği tarayıcı ortamlarını kullanarak tanıdıklığı korur, güvenlik kontrolleri sadece gerektiğinde aktif hale gelir. Uzantı, web sitelerinin görünümünü ve hissini değiştirmeden güvenlik enjekte eder.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="disposable-browser-content" class="tab-content">
+                            <div class="bg-slate-700/50 rounded-lg p-8">
+                                <div class="flex items-center mb-6">
+                                    <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-3xl font-bold">Geçici Tarayıcı</h3>
+                                </div>
+                                
+                                <h4 class="text-2xl font-semibold text-blue-400 mb-4">İzole Edilmiş Güvenli Tarama</h4>
+                                <p class="text-gray-300 mb-8">Netzilo'nun Geçici Tarayıcısı, tek seferlik güvenli oturumlar için açılan ve kapatıldığında kaybolan tamamen izole edilmiş bir tarayıcı ortamıdır. Ekstra dikkat gerektiren web sitelerini veya SaaS uygulamalarını ziyaret etmek için izole edilmiş bir tarama oturumu sağlar, oturumdan hiçbir şeyin uç noktaya zarar veremeyeceğini veya veri sızdıramayacağını garanti eder.</p>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div class="bg-slate-800 rounded-lg p-6">
+                                        <div class="flex items-center mb-4">
+                                            <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                                                </svg>
+                                            </div>
+                                            <h5 class="text-xl font-semibold">Tek Oturum Tarayıcı</h5>
+                                        </div>
+                                        <p class="text-gray-400">Kullanıcılar yüksek riskli aktiviteler için geçici bir tarayıcı başlatabilir. Tüm tarayıcı örneği geçicidir – geçmiş, çerezler, önbelleğe alınmış dosyalar ve oturum sırasında gelebilecek kötü amaçlı yazılımlar bile işiniz bittiğinde kaybolur.</p>
+                                    </div>
+                                    
+                                    <div class="bg-slate-800 rounded-lg p-6">
+                                        <div class="flex items-center mb-4">
+                                            <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                                </svg>
+                                            </div>
+                                            <h5 class="text-xl font-semibold">Güçlü Web Tehdit Kapsaması</h5>
+                                        </div>
+                                        <p class="text-gray-400">Ana işletim sisteminden izole edildiği için, Geçici Tarayıcı'da karşılaşılan herhangi bir kötü amaçlı site veya sıfır gün açığı sandbox'tan kaçamaz. Bir web sitesi fidye yazılımı veya trojan bırakmaya çalışırsa, kullanımdan sonra tamamen atılan geçici tarayıcıya sınırlandırılır.</p>
+                                    </div>
+                                    
+                                    <div class="bg-slate-800 rounded-lg p-6">
+                                        <div class="flex items-center mb-4">
+                                            <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                                                </svg>
+                                            </div>
+                                            <h5 class="text-xl font-semibold">Yerel RBI Benzeri Koruması</h5>
+                                        </div>
+                                        <p class="text-gray-400">Bulut izolasyonunun gecikmesi olmadan yerel olarak RBI benzeri (Uzak Tarayıcı İzolasyonu) koruması sağlar – hiçbir risk olmadan kusursuz bir deneyim.</p>
+                                    </div>
+                                    
+                                    <div class="bg-slate-800 rounded-lg p-6">
+                                        <div class="flex items-center mb-4">
+                                            <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                </svg>
+                                            </div>
+                                            <h5 class="text-xl font-semibold">Kusursuz Kullanıcı Deneyimi</h5>
+                                        </div>
+                                        <p class="text-gray-400">Netzilo, bu geçici tarayıcıyı kullanıcı iş akışlarına sorunsuz bir şekilde entegre eder. Kullanıcı güvenli bir oturumun başlatıldığını gösteren kısa bir animasyon görebilir, sonra siteyle normal şekilde etkileşim kurar. O pencereyi kapattığında, normal ortamlarına geri döner ve oturumdan hiçbir iz kalmaz.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="network-content" class="tab-content">
+                            <div class="bg-slate-700/50 rounded-lg p-8">
+                                <div class="flex items-center mb-6">
+                                    <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-3xl font-bold">Sıfır Güven Ağı</h3>
+                                </div>
+                                
+                                <h4 class="text-2xl font-semibold text-blue-400 mb-4">Sıfır Güven Üst Ağı</h4>
+                                <p class="text-gray-300 mb-8">Netzilo'nun Sıfır Güven Ağı, geleneksel VPN altyapısını sıfır güven yaklaşımıyla değiştiren güvenli, geçici bir bağlantı katmanı oluşturur. Kurumsal kaynaklara güvenli erişim sağlarken katı izolasyon ve güvenlik kontrollerini korur.</p>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div class="bg-slate-800 rounded-lg p-6">
+                                        <div class="flex items-center mb-4">
+                                            <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                                </svg>
+                                            </div>
+                                            <h5 class="text-xl font-semibold">VPN Yerine Geçen</h5>
+                                        </div>
+                                        <p class="text-gray-400">Geleneksel VPN çözümlerinin karmaşıklığı ve performans sınırlamaları olmadan kurumsal kaynaklara güvenli erişim sağlayarak VPN değiştirme zorluklarını çözer.</p>
+                                    </div>
+                                    
+                                    <div class="bg-slate-800 rounded-lg p-6">
+                                        <div class="flex items-center mb-4">
+                                            <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
+                                                </svg>
+                                            </div>
+                                            <h5 class="text-xl font-semibold">Kaynak Tabanlı Erişim Kontrolü</h5>
+                                        </div>
+                                        <p class="text-gray-400">Kullanıcı kimliği, cihaz durumu ve kaynak hassasiyetine dayalı ince taneli erişim kontrollerini uygular, kullanıcıların sadece ihtiyaç duyduklarına erişebilmesini ve başka hiçbir şeye erişememesini garanti eder.</p>
+                                    </div>
+                                    
+                                    <div class="bg-slate-800 rounded-lg p-6">
+                                        <div class="flex items-center mb-4">
+                                            <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                                </svg>
+                                            </div>
+                                            <h5 class="text-xl font-semibold">Uçtan Uca Şifreleme</h5>
+                                        </div>
+                                        <p class="text-gray-400">Tüm ağ trafiği, uç noktadan kaynağa kadar güçlü şifreleme ile güvenli hale getirilir, güvenilmeyen ağlarda bile yetkisiz erişimi veya veri yakalamayı önler.</p>
+                                    </div>
+                                    
+                                    <div class="bg-slate-800 rounded-lg p-6">
+                                        <div class="flex items-center mb-4">
+                                            <div class="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center mr-3">
+                                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                </svg>
+                                            </div>
+                                            <h5 class="text-xl font-semibold">Cihaz ve Güvenlik Durumu Doğrulaması</h5>
+                                        </div>
+                                        <p class="text-gray-400">Cihaz güvenlik durumunu ve kullanıcı bağlamını gerçek zamanlı olarak sürekli izler ve doğrular, sadece uyumlu cihazların ve yetkili kullanıcıların kurumsal kaynaklara erişebilmesini sağlarken adaptif güvenlik kontrollerini korur.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="resources-content" class="tab-content">
+                            <div class="bg-slate-700/50 rounded-lg p-8">
+                                <div class="flex items-center mb-6">
+                                    <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-3xl font-bold">Ek Kaynaklar</h3>
+                                </div>
+                                
+                                <h4 class="text-2xl font-semibold text-blue-400 mb-8">Kapsamlı Dokümantasyon ve Destek</h4>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div class="bg-slate-800 rounded-lg p-6">
+                                        <h5 class="text-xl font-semibold mb-4">Teknik Dokümantasyon</h5>
+                                        <p class="text-gray-400 mb-4">Detaylı teknik kütüphanemizde kapsamlı rehberler, API dokümantasyonu ve uygulama en iyi uygulamalarına erişin. Dokümantasyonumuz ilk kurulumdan gelişmiş yapılandırma senaryolarına kadar her şeyi kapsar.</p>
+                                        <a href="https://doc.netzilo.com/" target="_blank" rel="noopener" class="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors">
+                                            Dokümantasyonu İncele 
+                                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    
+                                    <div class="bg-slate-800 rounded-lg p-6">
+                                        <h5 class="text-xl font-semibold mb-4">Video Eğitimler</h5>
+                                        <p class="text-gray-400 mb-4">Netzilo'nun eylem halindeki gösterimlerini ve eğitimlerini izleyin, kurulum prosedürleri, yönetim görevleri ve son kullanıcı iş akışları dahil.</p>
+                                        <a href="https://www.youtube.com/@netzilo" target="_blank" rel="noopener" class="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors">
+                                            Eğitimleri İzle 
+                                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gartner Peer Insights Review -->
+        <div class="py-20 bg-slate-900/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Header -->
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-white mb-4">Müşteri Yorumları</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">Müşterilerimizin Netzilo'nun kurumsal güvenlik çözümleri hakkında ne söylediğini görün</p>
+                </div>
+                
+                <!-- Review Carousel Container -->
+                <div class="relative bg-slate-800/80 rounded-2xl p-8 border border-slate-700 overflow-hidden max-w-6xl mx-auto">
+                    <!-- Navigation Arrows -->
+                    <button onclick="prevReview()" class="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-slate-700 hover:bg-slate-600 flex items-center justify-center text-white transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    <button onclick="nextReview()" class="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-slate-700 hover:bg-slate-600 flex items-center justify-center text-white transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Review Slides -->
+                    <div class="review-slide active" id="review-1">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                            <!-- Left Column - Review Content -->
+                            <div class="lg:col-span-2">
+                                <!-- Header -->
+                                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-4">
+                                    <div class="flex items-center space-x-4">
+                                        <div class="flex items-center space-x-2">
+                                            <span class="text-xl sm:text-2xl font-bold text-white">Gartner</span>
+                                            <span class="text-xl sm:text-2xl font-bold text-white">Peer</span>
+                                            <span class="text-xl sm:text-2xl font-bold text-blue-400">Insights</span>
+                                            <span class="text-base sm:text-lg text-gray-400">™</span>
+                                        </div>
+                                        <div class="w-8 h-8 bg-blue-500 rounded flex items-center justify-center">
+                                            <img src="../../assets/images/netzilo_logo_blue.svg" alt="Netzilo" class="h-5 w-5 filter brightness-0 invert">
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <div class="flex text-yellow-400">
+                                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                            </svg>
+                                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                            </svg>
+                                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                            </svg>
+                                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                            </svg>
+                                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                            </svg>
+                                        </div>
+                                        <span class="text-2xl sm:text-3xl font-bold text-white">5.0</span>
+                                    </div>
+                                </div>
+
+                                <!-- Review Title -->
+                                <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 leading-tight">"Netzilo'nun Çalışma Alanı Özelliği ile Kurumsal Zorlukların Üstesinden Gelmek"</h3>
+                                <p class="text-gray-400 text-sm mb-6">26 Şubat 2025'te gönderildi</p>
+
+                                <!-- Review Content -->
+                                <div class="bg-slate-900/50 rounded-lg p-6 mb-6">
+                                    <p class="text-gray-300 leading-relaxed text-base">
+                                        "Birden fazla organizasyondan müteahhitleri entegre etmek bizim için büyük bir zorluktu. Başlangıçta VDI ve VPN çözümlerini denedik, ancak yüzlerce uygulama ve işletim sistemi görüntüsünü yönetmek bunaltıcı hale geldi ve VPN'ler ve bazı ZTNA araçlarıyla ölçeklenebilirlik sorunları yaşadık. Kurumsal çalışma alanı özelliği oyun değiştirici oldu. Outlook ve Visual Studio gibi uygulamaları VDI olmadan yönetilmeyen cihazlarda güvenli bir şekilde çalıştırabiliyoruz. Netzilo ihtiyaçlarımız için mükemmel bir uyum sağladı, ölçeklenebilirlik ve güvenlik zorluklarımızı başka hiçbir çözümün yapamayacağı şekilde çözdü."
+                                    </p>
+                                </div>
+
+                                <!-- Navigation Dots -->
+                                <div class="flex justify-center space-x-2 mb-6">
+                                    <button class="w-3 h-3 rounded-full bg-blue-500 review-dot active" onclick="showReview(1)"></button>
+                                    <button class="w-3 h-3 rounded-full bg-gray-600 review-dot" onclick="showReview(2)"></button>
+                                </div>
+
+                                <!-- Footer -->
+                                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                                    <div class="flex items-center space-x-4">
+                                        <div class="flex items-center space-x-2">
+                                            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                            </svg>
+                                            <span class="text-sm text-gray-400">Doğrulanmış Yorum</span>
+                                        </div>
+                                        <div class="text-sm text-gray-500">•</div>
+                                        <div class="text-sm text-gray-400">Sıfır Güven Ağ Erişimi</div>
+                                    </div>
+                                    <a href="https://www.gartner.com/reviews/market/zero-trust-network-access/vendor/netzilo/product/netzilo1" 
+                                       target="_blank" 
+                                       rel="noopener" 
+                                       class="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium">
+                                        Daha Fazla Yorum Oku
+                                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Right Column - Rating Details -->
+                            <div class="lg:col-span-1">
+                                <div class="bg-slate-900/30 rounded-lg p-6">
+                                    <h4 class="text-lg font-semibold text-white mb-4">Değerlendirme Detayları</h4>
+                                    
+                                    <!-- Rating Grid -->
+                                    <div class="grid grid-cols-2 gap-4 mb-6">
+                                        <div class="text-center">
+                                            <div class="text-sm text-gray-400 mb-2">Değerlendirme</div>
+                                            <div class="flex justify-center text-yellow-400 mb-2">
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                            </div>
+                                            <div class="text-sm font-bold text-white">5.0</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="text-sm text-gray-400 mb-2">Entegrasyon</div>
+                                            <div class="flex justify-center text-yellow-400 mb-2">
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                            </div>
+                                            <div class="text-sm font-bold text-white">5.0</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="text-sm text-gray-400 mb-2">Hizmet</div>
+                                            <div class="flex justify-center text-yellow-400 mb-2">
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                            </div>
+                                            <div class="text-sm font-bold text-white">5.0</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="text-sm text-gray-400 mb-2">Ürün</div>
+                                            <div class="flex justify-center text-yellow-400 mb-2">
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                            </div>
+                                            <div class="text-sm font-bold text-white">5.0</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- User Details -->
+                                    <div class="border-t border-slate-700 pt-4">
+                                        <h5 class="text-sm font-semibold text-white mb-3">Yorum Yapan Detayları</h5>
+                                        <div class="space-y-2">
+                                            <div class="flex justify-between">
+                                                <span class="text-sm text-gray-400">Rol:</span>
+                                                <span class="text-sm text-white text-right">İş ve Ürün Geliştirme</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="text-sm text-gray-400">Sektör:</span>
+                                                <span class="text-sm text-white">IT Hizmetleri</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="text-sm text-gray-400">Şirket Büyüklüğü:</span>
+                                                <span class="text-sm text-white">&lt;$50M USD</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gartner Disclaimer -->
+                    <div class="mt-8 p-4 bg-slate-900/50 rounded-lg">
+                        <p class="text-xs text-gray-500 italic">
+                            Gartner Peer Insights yorumları, bireysel son kullanıcıların kendi deneyimlerine dayalı öznel görüşlerini oluşturur ve Gartner veya bağlı kuruluşlarının görüşlerini temsil etmez.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <img src="../../assets/images/netzilo_logo_full_white.svg" alt="Netzilo" class="h-8">
+                    </div>
+                    <p class="text-gray-400 mb-4 max-w-md">
+                        Netzilo, kapsamlı bir Dijital Kurumsal İş Yeri çözümüyle kurumsal kenar yeteneklerini uç nokta ortamlarına genişletir.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/company/netzilo/" target="_blank" rel="noopener" class="text-gray-400 hover:text-blue-400 transition-colors">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Hızlı Linkler</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../../product/" class="text-gray-400 hover:text-white transition-colors">Ürün</a></li>
+                        <li><a href="../../tr/solutions/" class="text-gray-400 hover:text-white transition-colors">Çözümler</a></li>
+                        <li><a href="../../tr/pricing/" class="text-gray-400 hover:text-white transition-colors">Fiyatlandırma</a></li>
+                        <li><a href="../../tr/about/" class="text-gray-400 hover:text-white transition-colors">Hakkımızda</a></li>
+                        <li><a href="../../legal/" class="text-gray-400 hover:text-white transition-colors">Yasal</a></li>
+                        <li><a href="../../contact/" class="text-gray-400 hover:text-white transition-colors">İletişim</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">İletişim</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center space-x-2 text-gray-400">
+                            <span>sales@netzilo.com</span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-gray-400">
+                            <span>+1 (415) 985-2636</span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-gray-400">
+                            <span>San Francisco, CA</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 mt-8 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm">
+                        © 2025 Netzilo. Tüm hakları saklıdır.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="../../privacy-policy.html" class="text-gray-400 hover:text-white text-sm transition-colors">Gizlilik Politikası</a>
+                        <a href="../../terms-of-service.html" class="text-gray-400 hover:text-white text-sm transition-colors">Kullanım Şartları</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) {
+                mobileMenu.classList.toggle('hidden');
+            }
+        }
+
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-button');
+
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            document.getElementById(`${tabId}-content`).classList.add('active');
+            document.querySelector(`.tab-button[onclick="showTab('${tabId}')"]`).classList.add('active');
+        }
+
+        // Show the default tab on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            showTab('browser'); // Default to showing the browser tab
+        });
+
+        // Gartner Review Carousel Functions
+        function showReview(reviewNumber) {
+            // Hide all review slides
+            const slides = document.querySelectorAll('.review-slide');
+            slides.forEach(slide => slide.classList.remove('active'));
+            
+            // Show the selected review
+            document.getElementById(`review-${reviewNumber}`).classList.add('active');
+            
+            // Update navigation dots
+            const dots = document.querySelectorAll('.review-dot');
+            dots.forEach(dot => dot.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function nextReview() {
+            const activeSlide = document.querySelector('.review-slide.active');
+            const currentReview = parseInt(activeSlide.id.split('-')[1]);
+            const nextReview = currentReview === 1 ? 2 : 1;
+            showReview(nextReview);
+        }
+
+        function prevReview() {
+            const activeSlide = document.querySelector('.review-slide.active');
+            const currentReview = parseInt(activeSlide.id.split('-')[1]);
+            const prevReview = currentReview === 1 ? 2 : 1;
+            showReview(prevReview);
+        }
+    </script>
+</body>
+</html> 
